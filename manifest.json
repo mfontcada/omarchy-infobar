@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "omarchy-infobar",
+  "name": "omarchy-infobar",
+  "version": "0.1.0",
+  "author": "mfontcada",
+  "description": "An always-visible companion bar for system information and controls",
+  "kinds": [
+    "panel"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "panel": "Infobar.qml"
+  }
+}
