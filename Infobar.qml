@@ -40,20 +40,15 @@ Item {
           anchors.fill: parent
           color: root.background
 
-          Row {
+          SystemInfo {
             anchors {
-              fill: parent
-              leftMargin: Style.space(12)
+              verticalCenter: parent.verticalCenter
+              right: parent.right
               rightMargin: Style.space(12)
             }
-            spacing: Style.spacing.md
-
-            SystemInfo {
-              anchors.verticalCenter: parent.verticalCenter
-              foreground: root.foreground
-              separator: root.separator
-              accent: root.accent
-            }
+            foreground: root.foreground
+            separator: root.separator
+            accent: root.accent
           }
         }
       }

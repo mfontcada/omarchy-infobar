@@ -64,11 +64,15 @@ bash scripts/test-local.sh --install
 ```
 
 The install mode refuses to replace an existing non-local plugin directory.
-When finished, remove the test link with:
+It restarts `omarchy-shell` after enabling the plugin so persistent panel QML
+is loaded by a fresh engine instead of a stale component cache. When finished,
+remove the test link with:
 
 ```bash
 bash scripts/test-local.sh --remove
 ```
+
+Removal also restarts `omarchy-shell` so no stale panel surface remains.
 
 ## Publishing
 

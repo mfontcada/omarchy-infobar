@@ -15,8 +15,8 @@ Usage: test-local.sh [--install|--remove]
 
 Without an option, validate the manifest, collector, and collector output.
 
-  --install  Link this working tree into Omarchy, rescan plugins, and enable it.
-  --remove   Remove the local test symlink and disable the plugin.
+  --install  Link this working tree, enable the plugin, and restart the shell.
+  --remove   Disable the plugin, remove the test symlink, and restart the shell.
 EOF
 }
 
@@ -64,6 +64,7 @@ install_local() {
 
   omarchy-shell shell rescanPlugins
   omarchy plugin enable "$PLUGIN_ID"
+  omarchy restart shell
   echo "OK: local omarchy-infobar linked at $PLUGIN_DIR and enabled"
 }
 
@@ -71,7 +72,7 @@ remove_local() {
   if [[ -L "$PLUGIN_DIR" ]] && [[ "$(readlink -f -- "$PLUGIN_DIR")" == "$PROJECT_DIR" ]]; then
     omarchy plugin disable "$PLUGIN_ID" || true
     rm "$PLUGIN_DIR"
-    omarchy-shell shell rescanPlugins
+    omarchy restart shell
     echo "OK: local omarchy-infobar test link removed"
   elif [[ -e "$PLUGIN_DIR" ]]; then
     echo "error: refusing to remove non-symlink $PLUGIN_DIR" >&2

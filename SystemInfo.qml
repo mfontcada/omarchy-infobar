@@ -68,7 +68,7 @@ Item {
     }
 
     Text {
-      text: "·"
+      text: "|"
       color: root.separator
       font.family: Style.font.family
       font.pixelSize: Style.font.body
@@ -83,7 +83,7 @@ Item {
     }
 
     Text {
-      text: "·"
+      text: "|"
       color: root.separator
       font.family: Style.font.family
       font.pixelSize: Style.font.body
@@ -98,7 +98,7 @@ Item {
     }
 
     Text {
-      text: "·"
+      text: "|"
       color: root.separator
       font.family: Style.font.family
       font.pixelSize: Style.font.body
