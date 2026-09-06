@@ -6,7 +6,10 @@
 existing `omarchy-shell` process and adds a second bottom bar without
 replacing or modifying Omarchy's normal top bar.
 
-The first module displays CPU, GPU, RAM, disk, and temperature information.
+The first module displays CPU, GPU, RAM, disk, temperature, and battery
+information. Battery status includes the current percentage and an adaptive
+time estimate: time remaining while discharging, time to full while charging,
+or `Full` when fully charged.
 The project is intentionally modular so additional information and controls
 can be added later.
 
@@ -28,6 +31,7 @@ Hardware-specific values depend on the available tools and drivers:
 | Intel GPU | DRM/sysfs, optional `intel_gpu_top` | unsupported values become `--` |
 | Memory | `/proc/meminfo` | unavailable values may show `--` |
 | Disk | `df` for `/` | reports the root filesystem |
+| Battery | Quickshell UPower | percentage and time become `--` if unavailable |
 
 The plugin does not use the network, require elevated privileges, or read
 credentials. Plugins run as unsandboxed code inside `omarchy-shell`, so review
