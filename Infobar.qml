@@ -49,13 +49,30 @@ Item {
             separator: root.separator
           }
 
-          BatteryInfo {
+          Row {
             anchors {
               verticalCenter: parent.verticalCenter
               right: parent.right
               rightMargin: Style.space(12)
             }
-            foreground: root.foreground
+
+            spacing: Style.spacing.sm
+
+            NetworkInfo {
+              foreground: root.foreground
+              separator: root.separator
+            }
+
+            Text {
+              text: "|"
+              color: root.separator
+              font.family: Style.font.family
+              font.pixelSize: Style.font.body
+            }
+
+            BatteryInfo {
+              foreground: root.foreground
+            }
           }
         }
       }

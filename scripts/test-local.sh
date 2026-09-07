@@ -32,6 +32,7 @@ validate() {
 
   jq empty "$PROJECT_DIR/manifest.json"
   bash -n "$PROJECT_DIR/scripts/sysinfo.sh"
+  bash -n "$PROJECT_DIR/scripts/network.sh"
   omarchy plugin validate "$PROJECT_DIR"
 
   local output field_count
