@@ -9,7 +9,6 @@ Item {
   readonly property int barHeight: Style.bar.sizeHorizontal
   readonly property color foreground: Color.bar.text
   readonly property color background: Color.bar.background
-  readonly property color accent: Color.accent
   readonly property color separator: Qt.alpha(foreground, 0.35)
 
   // The panel is a persistent layer-shell surface, separate from the stock
@@ -43,12 +42,20 @@ Item {
           SystemInfo {
             anchors {
               verticalCenter: parent.verticalCenter
+              left: parent.left
+              leftMargin: Style.space(12)
+            }
+            foreground: root.foreground
+            separator: root.separator
+          }
+
+          BatteryInfo {
+            anchors {
+              verticalCenter: parent.verticalCenter
               right: parent.right
               rightMargin: Style.space(12)
             }
             foreground: root.foreground
-            separator: root.separator
-            accent: root.accent
           }
         }
       }

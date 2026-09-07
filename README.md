@@ -6,10 +6,10 @@
 existing `omarchy-shell` process and adds a second bottom bar without
 replacing or modifying Omarchy's normal top bar.
 
-The first module displays CPU, GPU, RAM, disk, temperature, and battery
-information. Battery status includes the current percentage and an adaptive
-time estimate: time remaining while discharging, time to full while charging,
-or `Full` when fully charged.
+The left side displays CPU, GPU, RAM, disk, and temperature information. The
+right side is reserved for battery status, including the current percentage
+and an adaptive time estimate: time remaining while discharging, time to full
+while charging, or `Full` when fully charged.
 The project is intentionally modular so additional information and controls
 can be added later.
 
@@ -43,7 +43,7 @@ From this repository, install the plugin directory with:
 
 ```bash
 mkdir -p ~/.config/omarchy/plugins/omarchy-infobar
-cp manifest.json Infobar.qml SystemInfo.qml README.md ~/.config/omarchy/plugins/omarchy-infobar/
+cp manifest.json Infobar.qml SystemInfo.qml BatteryInfo.qml README.md ~/.config/omarchy/plugins/omarchy-infobar/
 cp -r scripts ~/.config/omarchy/plugins/omarchy-infobar/
 chmod +x ~/.config/omarchy/plugins/omarchy-infobar/scripts/sysinfo.sh
 omarchy-shell shell rescanPlugins
